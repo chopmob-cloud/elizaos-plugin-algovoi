@@ -1,0 +1,109 @@
+{
+  "name": "@algovoi/plugin-elizaos",
+  "version": "0.1.0",
+  "description": "Multi-chain agent-to-agent (A2A) crypto payments for ElizaOS — ask, verify, and poll fiat-denominated payments that settle as USDC or native assets across Algorand, VOI, Hedera, Stellar, Base, Solana, and Tempo. Non-custodial.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "images"
+  ],
+  "scripts": {
+    "build": "tsup --format esm --dts",
+    "dev": "tsup --format esm --dts --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "@elizaos/core": "^0.25.0 || ^1.0.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "^0.25.0",
+    "@types/node": "^20.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "elizaos",
+    "elizaos-plugins",
+    "ai-agent",
+    "payments",
+    "crypto",
+    "x402",
+    "ap2",
+    "a2a",
+    "algorand",
+    "voi",
+    "hedera",
+    "stellar",
+    "base",
+    "solana",
+    "tempo",
+    "stablecoin",
+    "usdc"
+  ],
+  "license": "MIT",
+  "author": "AlgoVoi <support@algovoi.co.uk>",
+  "homepage": "https://algovoi.co.uk",
+  "repository": "github:chopmob-cloud/elizaos-plugin-algovoi",
+  "bugs": {
+    "url": "https://github.com/chopmob-cloud/elizaos-plugin-algovoi/issues"
+  },
+  "agentConfig": {
+    "pluginType": "elizaos:plugin:1.0.0",
+    "pluginParameters": {
+      "ALGOVOI_API_KEY": {
+        "type": "string",
+        "description": "Tenant API key obtained from https://dash.algovoi.co.uk/signup. Required.",
+        "sensitive": true,
+        "required": true
+      },
+      "ALGOVOI_API_BASE": {
+        "type": "string",
+        "description": "AlgoVoi A2A endpoint base URL.",
+        "default": "https://api1.ilovechicken.co.uk",
+        "required": false
+      },
+      "ALGOVOI_DEFAULT_NETWORK": {
+        "type": "string",
+        "description": "Default settlement network when none is specified by the user. One of: algorand_mainnet, voi_mainnet, hedera_mainnet, stellar_mainnet, base_mainnet, solana_mainnet, tempo_mainnet (or their testnet equivalents).",
+        "default": "algorand_mainnet",
+        "required": false
+      },
+      "ALGOVOI_DEFAULT_CURRENCY": {
+        "type": "string",
+        "description": "Default ISO 4217 currency for new checkouts. Defaults to GBP.",
+        "default": "GBP",
+        "required": false
+      }
+    },
+    "actions": [
+      "CREATE_PAYMENT_REQUEST",
+      "VERIFY_PAYMENT",
+      "CHECK_PAYMENT_STATUS"
+    ],
+    "providers": ["algovoi"],
+    "evaluators": [],
+    "services": [],
+    "models": []
+  }
+}
