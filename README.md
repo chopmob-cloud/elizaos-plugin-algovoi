@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![ElizaOS Plugin](https://img.shields.io/badge/elizaos--plugins-1.0%2B-7c3aed)](https://github.com/elizaos-plugins/registry)
+[![Agent Trust Bench](https://img.shields.io/badge/Agent_Trust_Bench-100%25_71%2F71-238636)](https://agent-trust-bench.algovoi.co.uk)
 
 > Multi-chain agent-to-agent (A2A) crypto payments for [ElizaOS](https://elizaos.ai) agents.
 
@@ -23,7 +24,7 @@ Settlement is direct on-chain customer-wallet → merchant-wallet via [AlgoVoi](
 - **7 chains, one interface.** Algorand, VOI, Hedera, Stellar, Base, Solana, Tempo — agent says "GBP", AlgoVoi handles the chain selection.
 - **4 payment protocols.** x402 (HTTP 402 micropayments), MPP (IETF), AP2 (Google Agentic Payments), and Google A2A v0.3.
 - **Stablecoin-first.** USDC across Algorand, VOI, Hedera, Stellar, Base, Solana, Tempo. Native asset support where the chain has it.
-- **No new SDK deps.** Plugin is a thin HTTP wrapper around the public A2A endpoint at `https://api1.ilovechicken.co.uk/.well-known/agent.json`.
+- **No new SDK deps.** Plugin is a thin HTTP wrapper around the public A2A endpoint at `https://api.algovoi.co.uk/.well-known/agent.json`.
 
 ## Install
 
@@ -46,7 +47,7 @@ Set environment variables (or pass via the runtime's settings):
 
 ```env
 ALGOVOI_API_KEY=algvk_live_...        # required — from dash.algovoi.co.uk
-ALGOVOI_API_BASE=https://api1.ilovechicken.co.uk   # optional, this is the default
+ALGOVOI_API_BASE=https://api.algovoi.co.uk   # optional, this is the default
 ALGOVOI_DEFAULT_NETWORK=algorand_mainnet           # optional, default
 ALGOVOI_DEFAULT_CURRENCY=GBP                       # optional, default
 ```
@@ -102,7 +103,7 @@ import { algovoiPlugin, AlgoVoiClient } from "@algovoi/plugin-elizaos";
 // Or use the underlying client directly:
 const client = new AlgoVoiClient({
   ALGOVOI_API_KEY: process.env.ALGOVOI_API_KEY!,
-  ALGOVOI_API_BASE: "https://api1.ilovechicken.co.uk",
+  ALGOVOI_API_BASE: "https://api.algovoi.co.uk",
   ALGOVOI_DEFAULT_NETWORK: "algorand_mainnet",
   ALGOVOI_DEFAULT_CURRENCY: "GBP",
 });
@@ -155,7 +156,7 @@ if (verified.verified) {
 The plugin connects to a Google A2A v0.3 agent. You can inspect AlgoVoi's full agent card at:
 
 ```bash
-curl https://api1.ilovechicken.co.uk/.well-known/agent.json
+curl https://api.algovoi.co.uk/.well-known/agent.json
 ```
 
 ## Security
