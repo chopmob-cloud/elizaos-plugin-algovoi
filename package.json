@@ -1,6 +1,6 @@
 {
   "name": "@algovoi/plugin-elizaos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Multi-chain agent-to-agent (A2A) crypto payments for ElizaOS — ask, verify, and poll fiat-denominated payments that settle as USDC or native assets across Algorand, VOI, Hedera, Stellar, Base, Solana, and Tempo. Non-custodial.",
   "type": "module",
   "main": "dist/index.js",
@@ -16,7 +16,8 @@
     "dist",
     "README.md",
     "LICENSE",
-    "images"
+    "images",
+    "elizaos.plugin.json"
   ],
   "scripts": {
     "build": "tsup --format esm --dts",
@@ -44,6 +45,8 @@
   },
   "keywords": [
     "elizaos",
+    "eliza",
+    "plugin",
     "elizaos-plugins",
     "ai-agent",
     "payments",
@@ -80,7 +83,7 @@
       "ALGOVOI_API_BASE": {
         "type": "string",
         "description": "AlgoVoi A2A endpoint base URL.",
-        "default": "https://api1.ilovechicken.co.uk",
+        "default": "https://api.algovoi.co.uk",
         "required": false
       },
       "ALGOVOI_DEFAULT_NETWORK": {

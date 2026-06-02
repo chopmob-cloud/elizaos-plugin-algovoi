@@ -1,0 +1,58 @@
+{
+  "id": "algovoi",
+  "name": "AlgoVoi Payments",
+  "description": "Multi-chain A2A crypto payments — ask for, verify, and poll fiat-denominated payments settling as USDC across Algorand, VOI, Hedera, Stellar, Base, Solana, and Tempo. Non-custodial, x402/MPP/AP2/A2A protocols.",
+  "version": "0.1.1",
+  "kind": "plugin",
+
+  "requiredSecrets": ["ALGOVOI_API_KEY"],
+  "optionalSecrets": ["ALGOVOI_API_BASE", "ALGOVOI_DEFAULT_NETWORK", "ALGOVOI_DEFAULT_CURRENCY"],
+
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "ALGOVOI_API_KEY": {
+        "type": "string",
+        "description": "Tenant API key from https://dash.algovoi.co.uk/signup"
+      },
+      "ALGOVOI_API_BASE": {
+        "type": "string",
+        "format": "uri",
+        "default": "https://api.algovoi.co.uk"
+      },
+      "ALGOVOI_DEFAULT_NETWORK": {
+        "type": "string",
+        "default": "algorand_mainnet",
+        "description": "Default settlement network (e.g. algorand_mainnet, solana_mainnet)"
+      },
+      "ALGOVOI_DEFAULT_CURRENCY": {
+        "type": "string",
+        "default": "GBP",
+        "description": "Default ISO 4217 currency for new checkouts"
+      }
+    },
+    "required": ["ALGOVOI_API_KEY"]
+  },
+
+  "uiHints": {
+    "ALGOVOI_API_KEY": {
+      "label": "AlgoVoi API Key",
+      "type": "password",
+      "sensitive": true,
+      "help": "Obtain from https://dash.algovoi.co.uk/signup"
+    },
+    "ALGOVOI_DEFAULT_NETWORK": {
+      "label": "Default Network",
+      "type": "select",
+      "options": [
+        "algorand_mainnet", "voi_mainnet", "hedera_mainnet",
+        "stellar_mainnet", "base_mainnet", "solana_mainnet", "tempo_mainnet"
+      ]
+    },
+    "ALGOVOI_DEFAULT_CURRENCY": {
+      "label": "Default Currency",
+      "type": "string",
+      "placeholder": "GBP"
+    }
+  }
+}
