@@ -1,7 +1,7 @@
 # @algovoi/plugin-elizaos
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![ElizaOS Plugin](https://img.shields.io/badge/elizaos--plugins-1.0%2B-7c3aed)](https://github.com/elizaos-plugins/registry)
+[![ElizaOS Plugin](https://img.shields.io/badge/elizaos--plugins-1.0%2B-7c3aed)](https://docs.elizaos.ai/plugins)
 [![Agent Trust Bench](https://img.shields.io/badge/Agent_Trust_Bench-100%25_71%2F71-238636)](https://agent-trust-bench.algovoi.co.uk)
 [![npm](https://img.shields.io/npm/v/@algovoi/plugin-elizaos)](https://www.npmjs.com/package/@algovoi/plugin-elizaos)
 
