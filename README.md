@@ -164,7 +164,7 @@ curl https://api.algovoi.co.uk/.well-known/agent.json
 
 - AlgoVoi is non-custodial — funds settle direct customer→merchant on a public blockchain
 - Your tenant API key is the only secret; rotate it via the dashboard
-- Compliance binder, security disclosure, and full policy library at [algovoi.co.uk/AlgoVoi/compliance.html](https://algovoi.co.uk/AlgoVoi/compliance.html)
+- Compliance binder, security disclosure, and full policy library at [algovoi.co.uk/compliance.html](https://algovoi.co.uk/compliance.html)
 - Vulnerability disclosure: [security@algovoi.co.uk](mailto:security@algovoi.co.uk) / [/.well-known/security.txt](https://algovoi.co.uk/.well-known/security.txt)
 
 ## Contributing
@@ -181,4 +181,4 @@ MIT — see [LICENSE](LICENSE).
 - Docs: [docs.algovoi.co.uk](https://docs.algovoi.co.uk)
 - A2A integration: [docs.algovoi.co.uk/protocols/a2a](https://docs.algovoi.co.uk/protocols/a2a)
 - ElizaOS: [elizaos.ai](https://elizaos.ai)
-- Plugin registry: [github.com/elizaos-plugins/registry](https://github.com/elizaos-plugins/registry)
+- Plugin registry: [docs.elizaos.ai/plugins](https://docs.elizaos.ai/plugins)
